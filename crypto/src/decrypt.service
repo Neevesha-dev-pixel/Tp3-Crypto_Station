@@ -1,0 +1,8 @@
+[Unit]
+Description=Data decryption
+After=network-online.target
+[Service]
+WorkingDirectory=/home/client/Neevesha/Tp3-Crypto_Station/crypto/src
+ExecStart=/home/client/Neevesha/Tp3-Crypto_Station/crypto/src/decrypt.sh
+[Install]
+WantedBy=multi-user.target
