@@ -19,7 +19,7 @@ sudo chmod u+x encrypt.sh
 sudo chmod u+x decrypt.sh
 
 
-sudo cp -f ~/Neevesha/Tp3-Crypto_Station/crypto/src/encrypt.service /etc/systemd/system/crypt.service
+sudo cp -f ~/Neevesha/Tp3-Crypto_Station/crypto/src/encrypt.service /etc/systemd/system/encrypt.service
 sudo cp -f ~/Neevesha/Tp3-Crypto_Station/crypto/src/decrypt.service /etc/systemd/system/decrypt.service
 
 sudo systemctl daemon-reload
