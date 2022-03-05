@@ -24,8 +24,9 @@ sudo cp -f ~/Neevesha/Tp3-Crypto_Station/crypto/src/decrypt.service /etc/systemd
 
 sudo systemctl daemon-reload
 sudo systemctl enable encrypt.service
-sudo systemctl enable decrypt.service
 sudo systemctl start encrypt.service
+sudo systemctl daemon-reload
+sudo systemctl enable decrypt.service
 sudo systemctl start decrypt.service
 
 echo "Successfully install the program"
