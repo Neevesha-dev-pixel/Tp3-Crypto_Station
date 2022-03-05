@@ -2,6 +2,7 @@
 # The main objective of this work is to create services, which will encrypt or decrypt content in a file 
 
 ## List of code for this program
+```sh
 - code.py
 - encrypt.py
 - encrypt.sh
@@ -11,7 +12,7 @@
 - decrypt.service
 - install.sh
 - uninstall.sh
-
+```
 # To launch the install the program
 ```sh
 Locate to the file "install"
