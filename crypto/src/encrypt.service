@@ -1,0 +1,8 @@
+[Unit]
+Description=Data encryption
+After=network-online.target
+[Service]
+WorkingDirectory=/home/client/Neevesha/Tp3-Crypto_Station/crypto/src
+ExecStart=/home/client/Neevesha/Tp3-Crypto_Station/crypto/src/encrypt.sh
+[Install]
+WantedBy=multi-user.target
