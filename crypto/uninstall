@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+if [[ -d ~/Neevesha ]]
+then
+        sudo rm -r ~/Neevesha
+        echo "Uninstalled"
+else
+        echo "Already uninstalled"
+fi
+
+
+sudo rm -f /etc/systemd/system/encrypt.service
+
+sudo rm -f /etc/systemd/system/decrypt.service
+
