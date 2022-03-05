@@ -1,37 +1,31 @@
 #!/bin/bash
-if [[ -d ~/Abhay ]]
+if [[ -d ~/Neevesha ]]
 then
 	echo "The folder already exists"
 else
-	mkdir ~/Abhay
+	mkdir ~/Neevesha
 fi
 
-cd ~/Abhay
-if [[ -d ~/Abhay/cryptage ]];
+cd ~/Neevesha
+if [[ -d ~Neevesha/Tp3-Crypto_Station/crypto ]];
 then
 	echo "The folder is already cloned"
 else
-	git clone https://github.com/AbhayGunputh/cryptage.git
+	git clone https://github.com/Neevesha-dev-pixel/Tp3-Crypto_Station.git
 fi
 
-cd ~/Abhay/cryptage/Crypt/src/
+cd ~/Neevesha/Tp3-Crypto_Station/crypto/src
+sudo chmod u+x encrypt.sh
+sudo chmod u+x decrypt.sh
 
-#To give permission and launch the cryption and decryption
-#sudo cp -f ~/Abhay/cryptage/Crypt/src/crypt.sh
-#sudo chmod u+x /bin/crypt.sh
-#sudo cp -f ~/Abhay/cryptage/Crypt/src/decrypt.sh /bin/decrypt.sh
-#sudo chmod u+x /bin/decrypt.sh
 
-#copy the service to systemd
-sudo cp -f ~/Abhay/cryptage/Crypt/src/crypt.service /etc/systemd/system/crypt.service
-sudo cp -f ~/Abhay/cryptage/Crypt/src/decrypt.service /etc/systemd/system/decrypt.service
+sudo cp -f ~/Neevesha/Tp3-Crypto_Station/crypto/src/encrypt.service /etc/systemd/system/crypt.service
+sudo cp -f ~/Neevesha/Tp3-Crypto_Station/crypto/src/decrypt.service /etc/systemd/system/decrypt.service
 
-#Launch service
 sudo systemctl daemon-reload
-sudo systemctl enable crypt.service
-sudo systemctl start crypt.service
-sudo systemctl daemon-reload
+sudo systemctl enable encrypt.service
 sudo systemctl enable decrypt.service
+sudo systemctl start encrypt.service
 sudo systemctl start decrypt.service
 
-echo "Installation Completed!"
+echo "Successfully install the program"
