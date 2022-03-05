@@ -1,0 +1,37 @@
+#!/bin/bash
+if [[ -d ~/Abhay ]]
+then
+	echo "The folder already exists"
+else
+	mkdir ~/Abhay
+fi
+
+cd ~/Abhay
+if [[ -d ~/Abhay/cryptage ]];
+then
+	echo "The folder is already cloned"
+else
+	git clone https://github.com/AbhayGunputh/cryptage.git
+fi
+
+cd ~/Abhay/cryptage/Crypt/src/
+
+#To give permission and launch the cryption and decryption
+#sudo cp -f ~/Abhay/cryptage/Crypt/src/crypt.sh
+#sudo chmod u+x /bin/crypt.sh
+#sudo cp -f ~/Abhay/cryptage/Crypt/src/decrypt.sh /bin/decrypt.sh
+#sudo chmod u+x /bin/decrypt.sh
+
+#copy the service to systemd
+sudo cp -f ~/Abhay/cryptage/Crypt/src/crypt.service /etc/systemd/system/crypt.service
+sudo cp -f ~/Abhay/cryptage/Crypt/src/decrypt.service /etc/systemd/system/decrypt.service
+
+#Launch service
+sudo systemctl daemon-reload
+sudo systemctl enable crypt.service
+sudo systemctl start crypt.service
+sudo systemctl daemon-reload
+sudo systemctl enable decrypt.service
+sudo systemctl start decrypt.service
+
+echo "Installation Completed!"
